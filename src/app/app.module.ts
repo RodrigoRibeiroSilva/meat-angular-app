@@ -13,8 +13,12 @@ registerLocaleData(locatePt, 'pt')
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
+import { ServicesModule } from './services/services.module';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +26,16 @@ import { ROUTES } from './app.routes';
     HeaderComponent,
     HomeComponent,
     NotFoundComponent,
+    RestaurantsComponent,
+    RestaurantComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ServicesModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt'}, {provide: LocationStrategy, useClass: HashLocationStrategy }],
