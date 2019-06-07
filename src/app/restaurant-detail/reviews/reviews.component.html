@@ -1,0 +1,7 @@
+<section class="content">
+    <div class="row">
+  <div class="col-xs-12 col-sm-6" *ngFor="let review of reviews | async">
+      <mt-review-item  [reviewItem]="review"></mt-review-item>
+  </div>
+</div>
+</section>

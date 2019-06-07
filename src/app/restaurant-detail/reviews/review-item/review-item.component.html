@@ -1,0 +1,15 @@
+<div class="box box-solid">
+      <div class="box-header with-border">
+        <span class="review-score pull-right"><i class="fa fa-star"></i> {{ reviewItem.rating }}</span>
+        <div class="user-block">
+          <img *ngIf="reviewItem.rating < 3" alt="User Image" class="img-circle" src="assets/img/reactions/pissed.png">
+          <img *ngIf="reviewItem.rating >= 3 && reviewItem.rating <= 4" alt="User Image" class="img-circle" src="assets/img/reactions/soso.png">
+          <img *ngIf="reviewItem.rating >4 " alt="User Image" class="img-circle" src="assets/img/reactions/loved.png">
+          <span class="username">{{ reviewItem.name }}</span>
+          <span class="description">{{ reviewItem.date | date: 'dd/MM/yyyy' }}</span>
+        </div>
+      </div>
+      <div class="box-body">
+        <p>{{ reviewItem.comments }}</p>
+      </div>
+</div>

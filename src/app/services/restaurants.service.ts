@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 
 import { FOOD_API } from '../app.api';
 import { Restaurant } from '../restaurants/restaurant/restaurant.model';
+import { MenuItem } from 'app/restaurant-detail/menu/menu-item/menu-item.model';
 
 
 
@@ -29,7 +30,10 @@ export class RestaurantService {
 
     getRestaurantReviews(id: string): Observable<any> {
         return this.http.get(`${FOOD_API}/restaurants/${id}/reviews`)
+    }
 
+    getMenu(id: string): Observable<MenuItem[]>{
+        return this.http.get<MenuItem[]>(`${FOOD_API}/restaurants/${id}/menu`)
     }
     
 }
