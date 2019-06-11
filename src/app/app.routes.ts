@@ -19,6 +19,7 @@ export const ROUTES: Routes = [
             {path: '', redirectTo: 'menu', pathMatch: 'full'},
             {path: 'menu', component: MenuComponent},
             {path: 'reviews', component: ReviewsComponent}
-        ]},  
+        ]},
+    {path: 'order', loadChildren: './order/order.module#OrderModule'} ,      
     {path: '**', component: NotFoundComponent} ,    
 ]
